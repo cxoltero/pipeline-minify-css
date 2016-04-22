@@ -15,9 +15,10 @@ describe('pipeline-minify-css', function() {
 
   describe('Default Configuration', function() {
     it('Should output two files after concatenation; Minified file and sourcemap', function (done) {
+
       gulp
         .src(getFixtures('*'))
-        .pipe(minifyPipeline().minifyCSS())
+        .pipe(minifyPipeline.minifyCSS())
         .pipe(assert.length(2))
         .pipe(assert.first(function (file) {
           var path = 'maps/' + handyman.getPackageName() + '.min.css.map';
@@ -34,7 +35,7 @@ describe('pipeline-minify-css', function() {
     it('Should generate only the minified file', function (done) {
       gulp
         .src(getFixtures('*'))
-        .pipe(minifyPipeline({addSourceMaps: false, concat: true}).minifyCSS())
+        .pipe(minifyPipeline.minifyCSS({addSourceMaps: false, concat: true}))
         .pipe(assert.length(1))
         .pipe(assert.end(done));
     });
@@ -42,7 +43,7 @@ describe('pipeline-minify-css', function() {
     it('Should output the same number of files minified', function (done) {
       gulp
         .src(getFixtures('*'))
-        .pipe(minifyPipeline({addSourceMaps: false, concat: false}).minifyCSS())
+        .pipe(minifyPipeline.minifyCSS({addSourceMaps: false, concat: false}))
         .pipe(assert.length(2))
         .pipe(assert.end(done));
     });
@@ -50,7 +51,7 @@ describe('pipeline-minify-css', function() {
     it('Should output the same number of files minified and the map for each one', function (done) {
       gulp
         .src(getFixtures('*'))
-        .pipe(minifyPipeline({addSourceMaps: true, concat: false}).minifyCSS())
+        .pipe(minifyPipeline.minifyCSS({addSourceMaps: true, concat: false}))
         .pipe(assert.length(4))
         .pipe(assert.end(done));
     });
@@ -60,11 +61,11 @@ describe('pipeline-minify-css', function() {
 
       gulp
         .src(getFixtures('*'))
-        .pipe(minifyPipeline({
+        .pipe(minifyPipeline.minifyCSS({
           addSourceMaps: true,
           concat: true,
           concatFilename: customFilename
-        }).minifyCSS())
+        }))
         .pipe(assert.length(2))
         .pipe(assert.first(function (file) {
           var path = 'maps/' + customFilename + '.map';
