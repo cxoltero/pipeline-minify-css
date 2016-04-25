@@ -18,17 +18,15 @@ var config = {
 
 module.exports = {
   minifyCSS: function(options) {
-    if (options) {
-      handyman.log('Merging custom configuration');
-      config = handyman.mergeConf(config, options);
-    }
+    options = options || {};
+    config = handyman.mergeConf(config, options);
 
     return minifyCSS();
   }
 };
 
-function makePipe() {
-  return lazypipe()
+function minifyCSS() {
+  var pipeline = lazypipe()
     .pipe(function() {
       return gulpIf(config.addSourceMaps, sourcemaps.init());
     })
@@ -39,10 +37,6 @@ function makePipe() {
     .pipe(function() {
       return gulpIf(config.addSourceMaps, sourcemaps.write('maps'));
     });
-}
-
-function minifyCSS() {
-  var pipeline = makePipe();
 
   return pipeline();
 }
