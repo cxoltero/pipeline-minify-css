@@ -47,7 +47,8 @@
     "gulp-minify-css": "1.2.1",
     "gulp-sourcemaps": "1.6.0",
     "lazypipe": "1.0.1",
-    "pipeline-handyman": "0.3.0"
+    "pipeline-handyman": "0.3.0",
+    "gulp-rename": "1.2.2"
   },
   "devDependencies": {
     "chai": "3.3.0",

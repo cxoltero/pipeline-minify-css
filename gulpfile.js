@@ -35,6 +35,5 @@ gulp.task('build', ['clean', 'validate'] , function() {
 
   return gulp
     .src(config.cssFiles)
-    .pipe(minifyCssPipeline.minifyCSS())
-    .pipe(gulp.dest('dest/'));
+    .pipe(minifyCssPipeline.minifyCSS());
 });
