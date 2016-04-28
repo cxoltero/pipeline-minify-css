@@ -21,7 +21,7 @@ Also, as part of a repo migration, version 0.2.0 will not install, so please use
 ## Usage
 ```javascript
 var gulp = require('gulp');
-var minifyPipeline = require('pipeline-minify-css')();
+var minifyPipeline = require('pipeline-minify-css');
 
 
 gulp.task('default', function() {
