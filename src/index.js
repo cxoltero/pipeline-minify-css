@@ -5,8 +5,8 @@ var handyman = require('pipeline-handyman');
 var gulpIf = require('gulp-if');
 var lazypipe = require('lazypipe');
 var minCSS = require('gulp-minify-css');
-var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
 
 var config = {
   addSourceMaps: true,
