@@ -20,7 +20,7 @@ var config = {
 module.exports = {
   minifyCSS: function(options) {
     options = options || {};
-    config = handyman.mergeConf(config, options);
+    config = handyman.mergeConfig(config, options);
 
     return pipelineFactory();
   }
