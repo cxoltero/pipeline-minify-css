@@ -12,7 +12,7 @@ var config = {
   addSourceMaps: true,
   concat: true,
   concatFilename: handyman.getPackageName() + '.min.css',
-  plugins:{
+  plugins: {
     cleanCss: {}
   }
 };
@@ -28,6 +28,7 @@ module.exports = {
 
 function pipelineFactory() {
   var pipeline = lazypipe()
+    
     .pipe(function() {
       return gulpIf(config.addSourceMaps, sourcemaps.init());
     })
