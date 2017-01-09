@@ -5,14 +5,12 @@
 
 | Package       | Description   | Version|
 | ------------- |:-------------:| -----:|
-| pipeline-minify-css| This pipeline minifies and optionally concatenates css files | 0.4.0 |
+| pipeline-minify-css| This pipeline minifies and optionally concatenates css files | 1.0.1 |
 
 # Overview
 
 Gulp pipeline for minifying CSS and optionally concatenating the output.
 
-**NOTE: as this project is still pre 1.0.0, it is subject to possible backwards incompatible changes as it matures.
-Also, as part of a repo migration, version 0.2.0 will not install, so please use any of the newer versions**
 
 ## Install
 
