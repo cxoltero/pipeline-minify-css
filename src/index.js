@@ -4,9 +4,9 @@ var concat = require('gulp-concat');
 var handyman = require('pipeline-handyman');
 var gulpIf = require('gulp-if');
 var lazypipe = require('lazypipe');
-var minCSS = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
+var cleanCss = require('gulp-clean-css');
 
 var config = {
   addSourceMaps: true,
@@ -28,11 +28,11 @@ module.exports = {
 
 function pipelineFactory() {
   var pipeline = lazypipe()
-    
+
     .pipe(function() {
       return gulpIf(config.addSourceMaps, sourcemaps.init());
     })
-    .pipe(minCSS, config.plugins.cleanCss)
+    .pipe(cleanCss, config.plugins.cleanCss)
     .pipe(function () {
       return gulpIf(!config.concat, rename({extname: '.min.css'}));
     })
